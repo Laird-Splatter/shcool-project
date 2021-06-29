@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WebApplication2.Models.secteur>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="jumbotron" style="background-color:#add8e6; text-align:center; margin-top:25px; align-content:center;">
+    <h2 style="color: red;">secteur</h2>
+
+    <p>
+        @Html.ActionLink("Creé un nouveau Secteur", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nomSecteur)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomSecteur)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CodeSecteur }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CodeSecteur }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CodeSecteur })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

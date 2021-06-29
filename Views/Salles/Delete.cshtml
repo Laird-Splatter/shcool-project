@@ -1,0 +1,49 @@
+﻿@model WebApplication2.Models.Salle
+
+@{
+    ViewBag.Title = "Delete";
+}
+<style type="text/css">
+    .animate__shakeX {
+        --animation-duration: 25s;
+        animation-iteration-count: 3;
+    }
+</style>
+<div class="jumbotron" style="background-color:#add8e6; text-align:center; margin-top:25px; align-content:center;">
+    <h2 style="color:red;">Delete</h2>
+
+    <div class="animate__animated animate__shakeX">
+        <h3 style="color: red;">vous Êtes sûr de vouloir supprimer cette Salle?</h3>
+    </div>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nomsalle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nomsalle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TypeSalle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TypeSalle)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" style="background-color:red; color:white;" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<WebApplication2.Models.Module>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="jumbotron" style="background-color:#add8e6; text-align:center; margin-top:25px; align-content:center;">
+    <h2 style="color:red;">Modules</h2>
+
+    <p>
+        @Html.ActionLink("Creé un nouveau Module", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MasseH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Filiere.nomF)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MasseH)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Filiere.nomF)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CodeM }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CodeM }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CodeM })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

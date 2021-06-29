@@ -1,0 +1,37 @@
+﻿@model WebApplication2.Models.Affemodule
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="jumbotron" style="background-color:#add8e6; text-align:center; margin-top:25px; align-content:center;">
+
+    <h2 style="color:red;">Details</h2>
+
+
+    <div>
+        <h4> Detail d'Affiche du module</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Module.NomM)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Module.NomM)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Formateur.nom)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Formateur.nom)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.numAff }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

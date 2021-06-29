@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebApplication2.Models.Affemodule>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="jumbotron" style="background-color:#add8e6; text-align:center; margin-top:25px; align-content:center;">
+    <h2 style="color:red;">Affiche du module</h2>
+
+    <p>
+        @Html.ActionLink("Creé une nouveau affiche du module ", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Module.NomM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formateur.nom)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Module.NomM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Formateur.nom)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.numAff }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.numAff }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.numAff })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

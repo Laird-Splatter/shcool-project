@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mon application ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <style type="text/css">
+        body {
+            background-color:antiquewhite;
+        }
+        #title
+        {
+            margin-right:250px;
+        }
+        @@media screen and (max-width: 400px){
+        #title
+        {
+            margin-right: 90px;
+            
+        }
+        #items{
+            margin-right:100px;
+        }
+
+        }
+    </style>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #2E2E2E
+">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+
+                </button>
+                <div id="title">
+                @Html.ActionLink("Gestion D'Université", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                     </div>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" id="items" >
+                    <li class="nav-item">@Html.ActionLink("Accueil", "Index", "Home")</li>
+                    <li class="nav-item">@Html.ActionLink("Secteurs", "Index", "Secteurs")</li>
+                    <li class="nav-item">@Html.ActionLink("Filieres", "Index", "Filieres")</li>
+                    <li class="nav-item">@Html.ActionLink("Groupes", "Index", "Groupes")</li>
+                    <li class="nav-item">@Html.ActionLink("Modules", "Index", "Modules")</li>
+                    <li class="nav-item">@Html.ActionLink("Formateurs", "Index", "Formateurs")</li>
+                    <li class="nav-item">@Html.ActionLink("Affemodules", "Index", "Affemodules")</li>
+                    <li class="nav-item">@Html.ActionLink("Salles", "Index", "Salles")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebApplication2.Models.Salle>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="jumbotron" style="background-color:#add8e6; text-align:center; margin-top:25px; align-content:center;">
+
+    <h2 style="color:red;">Salle</h2>
+
+    <p>
+        @Html.ActionLink("Creé une nouveau Salle", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nomsalle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeSalle)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nomsalle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeSalle)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CodeSalle }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CodeSalle }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CodeSalle })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

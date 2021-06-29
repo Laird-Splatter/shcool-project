@@ -1,0 +1,39 @@
+﻿@model WebApplication2.Models.Groupe
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="jumbotron" style="background-color:#add8e6; text-align:center; margin-top:25px; align-content:center;">
+
+    <h2 style="color:red;">Details</h2>
+
+    <div>
+        <h4>Details de Groupe </h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nomG)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nomG)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Filiere.nomF)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Filiere.nomF)
+            </dd>
+
+        </dl>
+    </div>
+
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CodeG }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WebApplication2.Models.Groupe>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="jumbotron" style="background-color:#add8e6; text-align:center; margin-top:25px; align-content:center;">
+
+    <h2 style="color:red">Groupes</h2>
+
+    <p>
+        @Html.ActionLink("Creé un nouveau Groupe", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.nomG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Filiere.nomF)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomG)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Filiere.nomF)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CodeG }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CodeG }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CodeG })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

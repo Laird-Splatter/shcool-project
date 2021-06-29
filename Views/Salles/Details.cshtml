@@ -1,0 +1,37 @@
+﻿@model WebApplication2.Models.Salle
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="jumbotron" style="background-color:#add8e6; text-align:center; margin-top:25px; align-content:center;">
+
+    <h2 style="color:red;">Details</h2>
+
+    <div>
+        <h4>Detail de cette Salle</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nomsalle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nomsalle)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TypeSalle)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TypeSalle)
+            </dd>
+
+        </dl>
+    </div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CodeSalle }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+</div>
